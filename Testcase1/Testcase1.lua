@@ -15,7 +15,7 @@ local Count = 0
 
 function Testcase1:ChangeImage(Name) 
     local texture = _G[Name] 
-    Count = clickCount + 1  
+    Count = Count + 1  
     if Count% 2 == 0 then 
         texture:SetTexture("Interface/Addons/Testcase1/resources/placeholder_before") 
     else 
