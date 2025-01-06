@@ -1,0 +1,102 @@
+<Ui xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="Libs\LibStub\LibStub.lua" />
+	<Include file="Libs\CallbackHandler-1.0\CallbackHandler-1.0.xml" />
+	<Include file="Libs\AceAddon-3.0\AceAddon-3.0.xml" />
+	<Include file="Libs\AceConsole-3.0\AceConsole-3.0.xml" />
+	<Include file="Libs\AceEvent-3.0\AceEvent-3.0.xml" />
+
+	<Frame name="MainFrame" inherits="BackdropTemplate" hidden="true">
+		<Size x="600" y="400" />
+		<Anchors>
+			<Anchor point="CENTER"></Anchor>
+		</Anchors>
+        <KeyValues>
+			<KeyValue key="backdropInfo" value="BACKDROP_DIALOG_32_32" keyType="string" type="global" />
+		</KeyValues>
+		<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+			<BackgroundInsets>
+				<AbsInset left="11" right="12" top="12" bottom="11" />
+			</BackgroundInsets>
+			<TileSize>
+				<AbsValue val="32" />
+			</TileSize>
+			<EdgeSize>
+				<AbsValue val="32" />
+			</EdgeSize>
+		</Backdrop>
+		<Layers>
+			<Layer>
+				<Texture name="FirstPic" file="Interface/Addons/Testcase1/resources/placeholder">
+					<Size x="120" y="80" />
+					<Anchors>
+						<Anchor x="10" point="LEFT" />
+					</Anchors>
+				</Texture>
+				<Texture name="SecondPic" file="Interface/Addons/Testcase1/resources/placeholder">
+					<Size x="120" y="80" />
+					<Anchors>
+						<Anchor point="CENTER" />
+					</Anchors>
+				</Texture>
+				<Texture name="ThirdPic" file="Interface/Addons/Testcase1/resources/placeholder">
+					<Size x="120" y="80" />
+					<Anchors>
+						<Anchor x="-10" point="RIGHT" />
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+        <Frames>
+            <Button name="CloseButton" inherits="UIPanelButtonTemplate">
+				<Size x="30" y="30" />
+				<Anchors>
+					<Anchor point="TOPRIGHT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						MainFrame:Hide()
+					</OnClick>
+				</Scripts>
+			</Button>
+        
+            <Button name="FirstButton" inherits="UIPanelButtonTemplate" text="FirstPIC">
+				<Size x="100" y="30" />
+				<Anchors>
+					<Anchor x="10" y="30" point="BOTTOMLEFT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>
+                        Testcase1:ChangeImage("FirstPic")
+					</OnClick>
+				</Scripts>
+			</Button>
+
+
+
+            <Button name="SecondButton" inherits="UIPanelButtonTemplate" text="SecondPIC">
+				<Size x="100" y="30" />
+				<Anchors>
+					<Anchor y="30" point="BOTTOM" />
+				</Anchors>
+				<Scripts>
+					<OnClick>
+                        Testcase1:ChangeImage("SecondPic")
+					</OnClick>
+				</Scripts>
+			</Button>
+
+            <Button name="ThirdButton" inherits="UIPanelButtonTemplate" text="ThirdPIC">
+				<Size x="100" y="30" />
+				<Anchors>
+					<Anchor x="-10" y="30" point="BOTTOMRIGHT" />
+				</Anchors>
+				<Scripts>
+					<OnClick>
+                        Testcase1:ChangeImage("ThirdPic")
+					</OnClick>
+				</Scripts>
+			</Button>
+
+        </Frames>
+	</Frame>
+</Ui>
